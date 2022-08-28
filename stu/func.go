@@ -35,9 +35,9 @@ type adminB struct {
 	level string
 }
 
-func (a adminB) notify() {
-	fmt.Printf("Sending email  to adminB %s<%s>\n", a.name, a.email)
-}
+// func (a adminB) notify() {
+// 	fmt.Printf("Sending email  to adminB %s<%s>\n", a.name, a.email)
+// }
 
 func TestFunc() {
 	// user类型的值可以调用使用者声明的发给发消息
@@ -65,6 +65,8 @@ func TestFunc() {
 		level: "super",
 	}
 	lily.user.notify()
+	// adminB不自定义notify  adminB也可以调用从内部类提升上来的notify实现
+	// 当然如果自定义  可以覆盖
 	lily.notify()
 }
 
