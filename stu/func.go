@@ -18,6 +18,15 @@ func (u *user) changeEmail(email string) {
 	u.email = email
 }
 
+type admin struct {
+	name  string
+	email string
+}
+
+func (a *admin) notify() {
+	fmt.Printf("Sending email  to admin %s<%s>", a.name, a.email)
+}
+
 func TestFunc() {
 	// user类型的值可以调用使用者声明的发给发消息
 	bill := user{"Bill", "bill@email.com"}
@@ -32,7 +41,9 @@ func TestFunc() {
 	lisa.notify()
 
 	sendNotification(lisa)
-	// SendNotification(&lisa)
+
+	sam := admin{"sam", "1111@qq.com"}
+	sendNotification(&sam)
 }
 
 func sendNotification(u notifier) {
