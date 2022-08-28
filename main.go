@@ -31,9 +31,10 @@ func main() {
 	// fmt.Println("-----------------int64")
 	// stu.TestStruct()
 
-	// fmt.Println("-----------------func")
-	// stu.TestFunc()
+	fmt.Println("-----------------func")
+	stu.TestFunc()
 
+	// fmt.Println("-----------------curl")
 	// 测试url curl 发送请求
 	// r, err := http.Get(os.Args[1])
 	// if err != nil {
@@ -47,5 +48,6 @@ func main() {
 	// 	fmt.Println(err)
 	// }
 
-	stu.TestCopy()
+	// fmt.Println("-----------------copy")
+	// stu.TestCopy()
 }

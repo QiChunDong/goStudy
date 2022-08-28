@@ -9,7 +9,7 @@ type user struct {
 }
 
 // 向用户使用者发送通知
-func (u user) notify() {
+func (u *user) notify() {
 	fmt.Printf("Sending user email to %s<%s>\n", u.name, u.email)
 }
 
@@ -30,4 +30,11 @@ func TestFunc() {
 	lisa.notify()
 	lisa.changeEmail("lisa1111@email.com")
 	lisa.notify()
+
+	sendNotification(lisa)
+	// SendNotification(&lisa)
+}
+
+func sendNotification(u notifier) {
+	u.notify()
 }
