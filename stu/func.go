@@ -24,7 +24,19 @@ type admin struct {
 }
 
 func (a *admin) notify() {
-	fmt.Printf("Sending email  to admin %s<%s>", a.name, a.email)
+	fmt.Printf("Sending email  to admin %s<%s>\n", a.name, a.email)
+}
+
+// 将user类型嵌入adminB 测试内部类型
+// adminB 是外部类型  user是内部类型
+// 如果adminB定义同名属性  可以覆盖user的
+type adminB struct {
+	user
+	level string
+}
+
+func (a adminB) notify() {
+	fmt.Printf("Sending email  to adminB %s<%s>\n", a.name, a.email)
 }
 
 func TestFunc() {
@@ -44,6 +56,16 @@ func TestFunc() {
 
 	sam := admin{"sam", "1111@qq.com"}
 	sendNotification(&sam)
+
+	lily := adminB{
+		user: user{
+			name:  "lily",
+			email: "1111112@qq.com",
+		},
+		level: "super",
+	}
+	lily.user.notify()
+	lily.notify()
 }
 
 func sendNotification(u notifier) {
