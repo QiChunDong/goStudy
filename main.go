@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io"
-	"net/http"
+	"gostudy/stu"
 	"os"
 )
 
@@ -36,15 +35,17 @@ func main() {
 	// stu.TestFunc()
 
 	// 测试url curl 发送请求
-	r, err := http.Get(os.Args[1])
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	// r, err := http.Get(os.Args[1])
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
 
 	// 从body取值
-	io.Copy(os.Stdout, r.Body)
-	if err := r.Body.Close(); err != nil {
-		fmt.Println(err)
-	}
+	// io.Copy(os.Stdout, r.Body)
+	// if err := r.Body.Close(); err != nil {
+	// 	fmt.Println(err)
+	// }
+
+	stu.TestCopy()
 }
