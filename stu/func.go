@@ -68,6 +68,10 @@ func TestFunc() {
 	// adminB不自定义notify  adminB也可以调用从内部类提升上来的notify实现
 	// 当然如果自定义  可以覆盖
 	lily.notify()
+	// 也都可以传入方法sendNotification
+	// 内外部的值及指针都是接口多态的一部分
+	sendNotification(&lily)
+	sendNotification(&lily.user)
 }
 
 func sendNotification(u notifier) {
