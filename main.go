@@ -31,8 +31,8 @@ func main() {
 	// fmt.Println("-----------------int64")
 	// stu.TestStruct()
 
-	fmt.Println("-----------------func")
-	stu.TestFunc()
+	// fmt.Println("-----------------func")
+	// stu.TestFunc()
 
 	// fmt.Println("-----------------curl")
 	// 测试url curl 发送请求
@@ -50,4 +50,10 @@ func main() {
 
 	// fmt.Println("-----------------copy")
 	// stu.TestCopy()
+
+	// fmt.Println("-----------------测试公开性")
+	// 未公开不能直接使用
+	// val := stu.alterCounter(1)
+	val1 := stu.New(1)
+	fmt.Printf("val1 is %d\n", val1)
 }
