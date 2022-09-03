@@ -8,3 +8,22 @@ type alterCounter int
 func New(value int) alterCounter {
 	return alterCounter(value)
 }
+
+// 结构体也是一样 未公开的字段不能直接访问
+type PubStruct struct {
+	Name  string
+	email string
+}
+
+// 内部类 不公开
+type pubStruct1 struct {
+	Name  string
+	Email string
+}
+
+// 公开的结构体中 引入了不公开内部类，但是内部类的字段都是公开的，这样字段会提升到
+// 外部类中，外部类对象可以直接定义内部类的公开字段
+type PubStruct2 struct {
+	pubStruct1
+	Level int
+}

@@ -53,7 +53,18 @@ func main() {
 
 	// fmt.Println("-----------------测试公开性")
 	// 未公开不能直接使用
-	// val := stu.alterCounter(1)
-	val1 := stu.New(1)
-	fmt.Printf("val1 is %d\n", val1)
+	// pub1 := stu.alterCounter(1)
+	pub2 := stu.New(1)
+	fmt.Printf("val1 is %d\n", pub2)
+	// pub3 := stu.PubStruct{
+	// 	Name:  "111",
+	// 	email: "11111", // 编译报错 unknown field 'email' in struct literal of type stu.PubStruct
+	// }
+	// fmt.Println(pub3)
+	pub4 := stu.PubStruct2{
+		Level: 1,
+	}
+	pub4.Name = "11111"
+	pub4.Email = "22222"
+	fmt.Printf("pub4: %v\n", pub4)
 }
