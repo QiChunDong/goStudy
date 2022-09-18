@@ -68,7 +68,7 @@ func main() {
 	// pub4.Email = "22222"
 	// fmt.Printf("pub4: %v\n", pub4)
 
-	fmt.Println("-----------------测试协程")
+	// fmt.Println("-----------------测试协程")
 	// 打印字母
 	// stu.TestRoutine()
 	// 打印素数
@@ -78,5 +78,13 @@ func main() {
 	// 测试加锁
 	// stu.TestAtom()
 	// 测试互斥锁mutex
-	stu.TestMutex()
+	// stu.TestMutex()
+
+	fmt.Println("-----------------测试通道")
+	// 无缓冲的通道
+	// stu.TestNoBufferChanel()
+	// 无缓冲的通道 2
+	// stu.TestNoBufferChanel2()
+	// 有缓冲的通道
+	stu.TestBufferChanel()
 }
