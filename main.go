@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"gostudy/stu"
+	"gostudy/stu_pkg"
 	"os"
 )
 
@@ -80,11 +81,15 @@ func main() {
 	// 测试互斥锁mutex
 	// stu.TestMutex()
 
-	fmt.Println("-----------------测试通道")
+	// fmt.Println("-----------------测试通道")
 	// 无缓冲的通道
 	// stu.TestNoBufferChanel()
 	// 无缓冲的通道 2
 	// stu.TestNoBufferChanel2()
 	// 有缓冲的通道
-	stu.TestBufferChanel()
+	// stu.TestBufferChanel()
+
+
+	fmt.Println("-----------------测试并发")
+	stu_pkg.TestRunner()
 }
