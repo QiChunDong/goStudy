@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gostudy/stu"
-	"gostudy/stu_pkg"
+	"gostudy/stupkg"
 	"os"
 )
 
@@ -90,6 +89,8 @@ func main() {
 	// stu.TestBufferChanel()
 
 
-	fmt.Println("-----------------测试并发")
-	stu_pkg.TestRunner()
+	// fmt.Println("-----------------测试并发")
+	// stupkg.TestRunner()
+	fmt.Println("-----------------测试pool")
+	stupkg.TestPool()
 }

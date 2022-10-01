@@ -1,16 +1,16 @@
-package stu_pkg
+package stupkg
 
 import (
+	"errors"
+	"fmt"
 	"os"
 	"os/signal"
 	"time"
-	"errors"
-	"fmt"
 )
 
 // 在给定的超时时间内执行一组代码
 // 在操作系统发送中断信号时结束任务
-type Rnner struct {
+type Runner struct {
 	// 通道报告
 	// 从操作系统发送的信号 如 ctrl+c
 	interrupt chan os.Signal
@@ -32,7 +32,7 @@ func New(d time.Duration) *Runner {
 	return &Runner{
 		interrupt: make(chan os.Signal, 1),
 		complete: make(chan error),
-		timeout: time.After(d)
+		timeout: time.After(d),
 	}
 }
 
@@ -91,9 +91,9 @@ func TestRunner() {
 
 	r := New(timeout)
 
-	r.Add(createTask(), createTask, ()createTask())
+	r.Add(createTask(), createTask(), createTask())
 
-	if err  r.Satrt(); err != nill {
+	if err := r.Start(); err != nil {
 		switch err{
 		case ErrorTimeout:
 			fmt.Println("Terminating due to timeout.")
@@ -109,7 +109,7 @@ func TestRunner() {
 
 func createTask() func(int) {
 	return func(id int) {
-		fmt.Printf("Processor - Task #%d", id)
-		time.Sleep(time.Duration(id) * time.Second)
+		fmt.Printf("Processor - Task #%d\n", id)
+		time.Sleep(time.Duration(id-1) * time.Second)
 	}
 }
