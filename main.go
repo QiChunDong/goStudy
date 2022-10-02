@@ -91,6 +91,10 @@ func main() {
 
 	// fmt.Println("-----------------测试并发")
 	// stupkg.TestRunner()
-	fmt.Println("-----------------测试pool")
-	stupkg.TestPool()
+	// fmt.Println("-----------------测试pool")
+	// stupkg.TestPool()
+	// fmt.Println("-----------------测试pool")
+	// stupkg.TestPool()
+	fmt.Println("-----------------测试work")
+	stupkg.TestWorker()
 }
