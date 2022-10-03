@@ -72,3 +72,13 @@ func TestApi(t *testing.T) {
 		}
 	}
 }
+
+// go test -v
+// === RUN   TestApi
+//     stutest_api_test.go:35:     开始测试API
+//     stutest_api_test.go:41: sendJson可以请求通！ ✓
+//     stutest_api_test.go:49: ✓ 收到响应码200
+//     stutest_api_test.go:60: ✓ 报文解析成功！
+//     stutest_api_test.go:63: ✓ 姓名是对的：Bill
+//     stutest_api_test.go:69: ✓ 邮箱是对的：111@qq.com
+// --- PASS: TestApi (0.00s)

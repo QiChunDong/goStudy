@@ -47,3 +47,11 @@ func Test123(t *testing.T) {
 	}
 	t.Logf("测试不通过")
 }
+
+// 测试命令 go test -v
+// === RUN   TestDownlod
+//     stutest_test.go:19:         开始测试下载内容
+//     stutest_test.go:21: 测试下载URL：https://flowus.cn/product, 期望结果：200
+//     stutest_test.go:27: 可以请求通！ ✓
+//     stutest_test.go:32: 收到响应码200 ✓
+// --- PASS: TestDownlod (0.16s)

@@ -53,3 +53,11 @@ func TestDownlodFeed(t *testing.T) {
 		}
 	}
 }
+
+// 测试命令 go test -v
+// === RUN   TestDownlodFeed
+//     stutest_mock_test.go:36:    开始测试MOCK下载内容
+//     stutest_mock_test.go:38: 测试下载URL：http://127.0.0.1:59278, 期望结果：200
+//     stutest_mock_test.go:44: 可以请求通！ ✓
+//     stutest_mock_test.go:49: 收到响应码200 ✓
+// --- PASS: TestDownlodFeed (0.00s)
